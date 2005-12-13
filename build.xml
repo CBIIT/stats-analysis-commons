@@ -5,7 +5,7 @@
 		Compiles the source directory
 	-->
 	<target name="build_jar">
-		<delete dir="${build.classes.dir}"/>
+		<delete dir="${build.classes.dir}" failonerror="false"/>
 		<mkdir dir="${build.classes.dir}" />
 		<javac srcdir="${build.source.dir}" destdir="${build.classes.dir}" source="1.5" excludes="**/test/**" debug="true" debuglevel="lines,vars,source">
 		 <classpath>
