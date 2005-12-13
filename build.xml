@@ -5,6 +5,9 @@
 		Compiles the source directory
 	-->
 	<target name="build_dependency" if="anthill.artifacts.dir" depends="build_jar">
+		<echo>
+			Artifacts copied to ${anthill.artifacts.dir}
+		</echo>
 		<copy file="caintegrator-analysis-commons.jar" todir="{anthill.artifacts.dir}"/>
 	</target>
 
