@@ -5,6 +5,8 @@
 		Compiles the source directory
 	-->
 	<target name="build_dependency" if="anthill.artifacts.dir" depends="build_jar">
+		<delete dir="${anthill.artifacts.dir}" failonerror="false"/>
+		<mkdir dir="${anthill.artifacts.dir}"/>
 		<echo>
 			Artifacts copied to ${anthill.artifacts.dir}
 		</echo>
