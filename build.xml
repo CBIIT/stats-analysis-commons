@@ -12,7 +12,6 @@
 		</echo>
 		<copy file="caintegrator-analysis-commons.jar" todir="${anthill.artifacts.dir}"/>
 	</target>
-
 	<target name="build_jar">
 		<delete dir="${build.classes.dir}" failonerror="false"/>
 		<mkdir dir="${build.classes.dir}"/>
@@ -30,4 +29,5 @@
 			</fileset>
 		</jar>
 	</target>
+	<target name="noop"/>
 </project>
