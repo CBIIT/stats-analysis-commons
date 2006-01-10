@@ -1,5 +1,7 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 /**
+ * Base class for all analysis requests. 
+ * Stores session and task ids as well as elapsed compute time.
  * 
  * @author Michael A. Harris
  *

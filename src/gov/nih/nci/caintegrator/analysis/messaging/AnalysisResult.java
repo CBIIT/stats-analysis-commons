@@ -3,6 +3,7 @@ package gov.nih.nci.caintegrator.analysis.messaging;
 import java.io.Serializable;
 
 /**
+ * Base class for all analysis results. Stores session and task ids.
  * 
  * @author Michael A. Harris
  *
