@@ -1,0 +1,13 @@
+<project name="caintegrator-analysis-commons-download" default="build_zip" basedir=".">
+	<target name="build_codebase">
+	     <echo>Building the caintegrator-analysis-commons.jar...</echo>
+	    <ant target="build_jar" dir="."/>
+	</target>
+	<target name="build_zip" depends="build_codebase">
+		     <echo>Building the .zip download</echo>
+			<zip destfile="caintegrator-analysis-commons.zip">
+			    <zipfileset dir="src" prefix="src"/>
+				<zipfileset dir="." includes="build.xml,basic_build.properties,caintegrator-analysis-commons.jar"/>
+			</zip>
+	</target>
+</project>
