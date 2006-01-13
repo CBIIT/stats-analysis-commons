@@ -1,13 +1,29 @@
 <project name="caintegrator-analysis-commons-download" default="build_zip" basedir=".">
+	<property file="basic_build.properties" />
+	<target name="build_dependency" if="${anthill.artifacts.dir}" depends="build_zip">
+		<delete dir="${anthill.artifacts.dir}" failonerror="false" />
+		<mkdir dir="${anthill.artifacts.dir}" />
+		<echo>
+			Artifacts copied to ${anthill.artifacts.dir}
+		</echo>
+		<copy file="${module_name}.zip" todir="${anthill.artifacts.dir}" />
+	</target>
 	<target name="build_codebase">
 	     <echo>Building the caintegrator-analysis-commons.jar...</echo>
 	    <ant target="build_jar" dir="."/>
 	</target>
 	<target name="build_zip" depends="build_codebase">
-		     <echo>Building the .zip download</echo>
-			<zip destfile="caintegrator-analysis-commons.zip">
-			    <zipfileset dir="src" prefix="src"/>
-				<zipfileset dir="." includes="build.xml,basic_build.properties,caintegrator-analysis-commons.jar"/>
-			</zip>
-	</target>
+		 <delete file="${module_name}.zip"/>
+	     <zip destfile="${module_name}.zip">
+			 <zipfileset dir="${build.source.dir}" prefix="${project_name}/${module_name}/${build.source.dir}"/>
+			 <zipfileset dir="${build.lib.dir}" prefix="${project_name}/${module_name}/${build.lib.dir}">
+			 	<include name="*.jar"/>
+			 </zipfileset>
+			 <zipfileset dir="." prefix="${project_name}/${module_name}/.">
+                <include name="build.xml"/>
+                <include name="basic_build.properties"/>
+			 	<include name="${module_name}.jar"/>
+             </zipfileset>		
+         </zip>
+     </target>
 </project>
