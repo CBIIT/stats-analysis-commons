@@ -73,7 +73,7 @@ public class ClassComparisonResultEntry implements java.io.Serializable {
 	private double meanGrp1;
 	private double meanGrp2;
 	private double meanDiff;
-	private double foldChange;
+	private double absoluteFoldChange;
 	private double pvalue;
 	
 	public ClassComparisonResultEntry() {
@@ -81,11 +81,18 @@ public class ClassComparisonResultEntry implements java.io.Serializable {
 	}
 
 	public double getFoldChange() {
-		return foldChange;
+		if (meanDiff < 0) {
+		  return -absoluteFoldChange;
+		}
+		return absoluteFoldChange;
+	}
+	
+	public double getAbsoluteFoldChange() {
+	  return absoluteFoldChange;
 	}
 
-	public void setFoldChange(double foldChange) {
-		this.foldChange = foldChange;
+	public void setAbsoluteFoldChange(double absoluteFoldChange) {
+		this.absoluteFoldChange = absoluteFoldChange;
 	}
 
 	public double getMeanDiff() {
