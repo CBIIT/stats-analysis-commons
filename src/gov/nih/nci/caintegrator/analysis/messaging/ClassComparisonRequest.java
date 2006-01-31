@@ -88,7 +88,7 @@ public class ClassComparisonRequest extends AnalysisRequest implements java.io.S
 	
 	private SampleGroup group1 = null;
 	
-	private SampleGroup group2 = null;
+	private SampleGroup baselineGroup = null;
 	
 	public ClassComparisonRequest(String sessionid, String taskId) {
 		super(sessionid, taskId);
@@ -101,8 +101,8 @@ public class ClassComparisonRequest extends AnalysisRequest implements java.io.S
 	    retStr += " GRP1=" + group1.getGroupName();
 	  }
 	  
-	  if (group2 != null) {
-	    retStr += " GRP2=" + group2.getGroupName();
+	  if (baselineGroup != null) {
+	    retStr += " baselineGroup=" + baselineGroup.getGroupName();
 	  }
 	  
 	  return retStr;
@@ -158,12 +158,12 @@ public class ClassComparisonRequest extends AnalysisRequest implements java.io.S
 		this.group1 = group1;
 	}
 
-	public SampleGroup getGroup2() {
-		return group2;
+	public SampleGroup getBaselineGroup() {
+		return baselineGroup;
 	}
 
-	public void setGroup2(SampleGroup group2) {
-		this.group2 = group2;
+	public void setBaselineGroup(SampleGroup baselineGroup) {
+		this.baselineGroup = baselineGroup;
 	}
 
 }

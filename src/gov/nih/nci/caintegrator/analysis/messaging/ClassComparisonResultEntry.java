@@ -71,7 +71,7 @@ public class ClassComparisonResultEntry implements java.io.Serializable {
 	
 	private String reporterId;
 	private double meanGrp1;
-	private double meanGrp2;
+	private double meanBaselineGrp;
 	private double meanDiff;
 	private double absoluteFoldChange;
 	private double pvalue;
@@ -111,12 +111,12 @@ public class ClassComparisonResultEntry implements java.io.Serializable {
 		this.meanGrp1 = meanGrp1;
 	}
 
-	public double getMeanGrp2() {
-		return meanGrp2;
+	public double getMeanBaselineGrp() {
+		return meanBaselineGrp;
 	}
 
-	public void setMeanGrp2(double meanGrp2) {
-		this.meanGrp2 = meanGrp2;
+	public void setMeanBaselineGrp(double meanBaselineGrp) {
+		this.meanBaselineGrp = meanBaselineGrp;
 	}
 
 	public double getPvalue() {
