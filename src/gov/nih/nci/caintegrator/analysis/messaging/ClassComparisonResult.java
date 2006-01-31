@@ -73,7 +73,7 @@ public class ClassComparisonResult extends AnalysisResult implements Serializabl
 	
 	private List<ClassComparisonResultEntry> ccResultEntries;
 	private SampleGroup group1;
-	private SampleGroup group2;
+	private SampleGroup baselineGroup;
 	private boolean arePvaluesAdjusted = false;
 	
 	public ClassComparisonResult(String sessionId, String taskId) {
@@ -107,12 +107,12 @@ public class ClassComparisonResult extends AnalysisResult implements Serializabl
 		this.group1 = group1;
 	}
 
-	public SampleGroup getGroup2() {
-		return group2;
+	public SampleGroup getBaselineGroup() {
+		return baselineGroup;
 	}
 
-	public void setGroup2(SampleGroup group2) {
-		this.group2 = group2;
+	public void setBaselineGroup(SampleGroup baselineGroup) {
+		this.baselineGroup = baselineGroup;
 	}
 
 	/**
