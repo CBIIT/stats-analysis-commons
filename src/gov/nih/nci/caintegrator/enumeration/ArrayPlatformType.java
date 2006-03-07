@@ -82,6 +82,11 @@ ARRAY_CGH {
 	{ 
 		return "ArrayCGH";
 	}},
+AGILENT {
+    public String toString()
+     { 
+        return "Agilent";
+     }},
 AFFY_100K_SNP_ARRAY {
 		public String toString()
 		{ 
