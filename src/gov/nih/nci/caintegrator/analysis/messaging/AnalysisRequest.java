@@ -70,6 +70,8 @@ public abstract class AnalysisRequest implements java.io.Serializable {
 	private String sessionId; 
 	private String taskId;
 	
+	private String dataFileName = null;
+	
 	private long requestStartTime = 0L;     //for perfomance metrics
 	private long requestCompleteTime = 0L;  //for performance metrics
 	
@@ -106,5 +108,21 @@ public abstract class AnalysisRequest implements java.io.Serializable {
 	}
 	
 	public long getElapsedTime() { return requestCompleteTime - requestStartTime; }
+
+	/**
+	 * Get the data file to be used to satisfy this request
+	 * @return
+	 */
+	public String getDataFileName() {
+		return dataFileName;
+	}
+
+	/**
+	 * Set the data file to be used as input to the analysis
+	 * @param dataFileName
+	 */
+	public void setDataFileName(String dataFileName) {
+		this.dataFileName = dataFileName;
+	}
 
 }
