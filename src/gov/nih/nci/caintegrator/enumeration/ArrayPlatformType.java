@@ -72,7 +72,7 @@ CDNA_ARRAY_PLATFORM {
 	{ 
 		return "cDNA arrays";
 	}},
-ALL_PLATFROM {
+ALL_PLATFORM {
 	public String toString()
 	{ 
 		return "all";
