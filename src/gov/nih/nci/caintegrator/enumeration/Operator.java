@@ -73,8 +73,16 @@ public enum Operator implements Serializable{
 	LT, //less than
 	EQ, //equals
 	NE, //not equal to
-	GE, //greater than or equal to
-	LE, //less than or equal to
+	GE { 
+        public String toString() 
+        { 
+            return ">=";
+        } }, //greater than or equal to
+	LE{ 
+        public String toString() 
+        { 
+            return "<=";                                                                                                                           
+        } }, //less than or equal to
     AND,// Intersection 
     OR ,//Union
     NOT //Difference
