@@ -1,16 +1,52 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+import java.util.List;
+
 public class CorrelationRequest extends AnalysisRequest {
 
+	
+	private String vector1Name;
+	private List<Double> vector1;
+	
+	private String vector2Name;
+	private List<Double> vector2;
+	
 	public CorrelationRequest(String sessionId, String taskId) {
 		super(sessionId, taskId);
-		// TODO Auto-generated constructor stub
+		
 	}
+	
+	public void setVector1(String name, List<Double> values) {
+	  this.vector1Name = name;
+	  this.vector1 = values;
+	}
+	
+	public void setVector2(String name, List<Double> values) {
+	  this.vector2Name = name;
+	  this.vector2 = values;
+	}
+	
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		
 		return null;
+	}
+
+	public List<Double> getVector1() {
+		return vector1;
+	}
+
+	public String getVector1Name() {
+		return vector1Name;
+	}
+
+	public List<Double> getVector2() {
+		return vector2;
+	}
+
+	public String getVector2Name() {
+		return vector2Name;
 	}
 
 }
