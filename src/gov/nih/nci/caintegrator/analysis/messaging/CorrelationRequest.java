@@ -1,5 +1,7 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+import gov.nih.nci.caintegrator.enumeration.CorrelationType;
+
 import java.util.List;
 
 public class CorrelationRequest extends AnalysisRequest {
@@ -10,6 +12,8 @@ public class CorrelationRequest extends AnalysisRequest {
 	
 	private String vector2Name;
 	private List<Double> vector2;
+	
+	private CorrelationType correlationType;
 	
 	public CorrelationRequest(String sessionId, String taskId) {
 		super(sessionId, taskId);
@@ -47,6 +51,14 @@ public class CorrelationRequest extends AnalysisRequest {
 
 	public String getVector2Name() {
 		return vector2Name;
+	}
+
+	public CorrelationType getCorrelationType() {
+		return correlationType;
+	}
+
+	public void setCorrelationType(CorrelationType correlationType) {
+		this.correlationType = correlationType;
 	}
 
 }
