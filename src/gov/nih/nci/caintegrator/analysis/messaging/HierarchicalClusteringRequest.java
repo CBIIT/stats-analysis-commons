@@ -76,7 +76,7 @@ public class HierarchicalClusteringRequest extends AnalysisRequest implements ja
 	private ArrayPlatformType arrayPlatform = ArrayPlatformType.AFFY_OLIGO_PLATFORM;
 	private double varianceFilterValue = 0.9;
 	private ReporterGroup reporterGroup;
-	private SampleGroup sampleGroup;        //not sure if we need this one
+	private SampleGroup sampleGroup;        
 	
 	
 	public HierarchicalClusteringRequest(String sessionId, String taskId) {
@@ -85,7 +85,17 @@ public class HierarchicalClusteringRequest extends AnalysisRequest implements ja
 	}
 	
 	public String toString() {
-	  return "HierarchicalClusteringAnalysisRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId();
+	  int reporterGroupSize = -1;
+	  if (reporterGroup!= null) {
+	    reporterGroupSize = reporterGroup.size();
+	  }
+	  
+	  int sampleGroupSize = -1;
+	  if (sampleGroup!=null) {
+	    sampleGroupSize = sampleGroup.size();
+	  }
+		
+	  return "HierarchicalClusteringAnalysisRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " reporterGroupSize=" + reporterGroupSize + " sampleGroupSize=" + sampleGroupSize;
 	}
 
 	public ArrayPlatformType getArrayPlatform() {

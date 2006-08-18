@@ -95,7 +95,18 @@ public class ClassComparisonRequest extends AnalysisRequest implements java.io.S
 	}
 	
 	public String toString() {
-	  String retStr = "ClassComparisonAnalysisRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId();
+	
+	  int blGroupSize = -1;
+	  if (baselineGroup!=null) {
+	    blGroupSize = baselineGroup.size();
+	  }
+	  
+	  int group1Size = -1;
+	  if (group1 !=null) {
+	    group1Size = group1.size();
+	  }
+		
+	  String retStr = "ClassComparisonAnalysisRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " blGroupSize=" + blGroupSize + " group1Szie=" + group1Size;
 	  
 	  if (group1 != null) { 
 	    retStr += " GRP1=" + group1.getGroupName();

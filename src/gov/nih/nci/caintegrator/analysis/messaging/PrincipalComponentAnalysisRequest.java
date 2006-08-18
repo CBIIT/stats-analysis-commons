@@ -88,7 +88,12 @@ public class PrincipalComponentAnalysisRequest extends AnalysisRequest implement
 	  if (reporterGroup != null) {
         reporterGroupSize = reporterGroup.size();
 	  }
-	  return "PCArequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " platform=" + platform + " varianceFilterValue=" + varianceFilterValue + " foldChangeFilterValue=" + foldChangeFilterValue + " reporterGroupSize=" + reporterGroupSize;
+	  
+	  int sampleGroupSize = -1;
+	  if (sampleGroup!= null) {
+	    sampleGroupSize = sampleGroup.size();
+	  }
+	  return "PCArequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " platform=" + platform + " varianceFilterValue=" + varianceFilterValue + " foldChangeFilterValue=" + foldChangeFilterValue + " reporterGroupSize=" + reporterGroupSize + " sampleGroupSize=" + sampleGroupSize;
 	}
 	
 	public double getVarianceFilterValue() {
