@@ -2,16 +2,21 @@ package gov.nih.nci.caintegrator.analysis.messaging;
 
 import gov.nih.nci.caintegrator.enumeration.CorrelationType;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class CorrelationRequest extends AnalysisRequest {
+public class CorrelationRequest extends AnalysisRequest implements Serializable {
 
 	
-	private String vector1Name;
-	private List<Double> vector1;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private DoubleVector vector1 = null;
+	private DoubleVector vector2 = null;
 	
-	private String vector2Name;
-	private List<Double> vector2;
+	private ReporterInfo reporter1 = null;
+	private ReporterInfo reporter2 = null;
+	
 	
 	private CorrelationType correlationType;
 	
@@ -20,39 +25,61 @@ public class CorrelationRequest extends AnalysisRequest {
 		
 	}
 	
-	public void setVector1(String name, List<Double> values) {
-	  this.vector1Name = name;
-	  this.vector1 = values;
+	public void setVector1(DoubleVector vector1) {
+	  this.vector1 = vector1;
 	}
 	
-	public void setVector2(String name, List<Double> values) {
-	  this.vector2Name = name;
-	  this.vector2 = values;
+	public void setVector2(DoubleVector vector2) {
+	  this.vector2 = vector2;
 	}
 	
+	public void setReporter1(ReporterInfo reporter1) {
+	  this.reporter1 = reporter1;
+	}
+	
+	public void setReporter2(ReporterInfo reporter2) {
+	  this.reporter2 = reporter2;
+	}
 
 	@Override
 	public String toString() {
 		
-		return null;
+	  StringBuffer sb = new StringBuffer();
+	  	
+	  sb.append("CorrelationReqeust: sessionId=").append(getSessionId()).append(" taskId=" ).append(getTaskId());
+	  
+	  if (vector1 != null) {
+		sb.append(" vector1=").append(vector1.getName()).append(" len=").append(vector1.size());		  
+	  }
+	  
+	  if (vector2 != null) {
+		sb.append(" vector2=").append(vector2.getName()).append(" len=").append(vector2.size());		  
+	  }
+	  
+	  if (reporter1 != null) {
+	    sb.append(reporter1.toString());
+	  }
+	  
+	  if (reporter2 != null) {
+		sb.append(reporter2.toString());
+	  }
+	  
+	  sb.append(" ").append(correlationType.toString());
+	 
+	  return sb.toString();
+	  
 	}
 
-	public List<Double> getVector1() {
+	public DoubleVector getVector1() {
 		return vector1;
 	}
 
-	public String getVector1Name() {
-		return vector1Name;
-	}
-
-	public List<Double> getVector2() {
+	
+	public DoubleVector getVector2() {
 		return vector2;
 	}
 
-	public String getVector2Name() {
-		return vector2Name;
-	}
-
+	
 	public CorrelationType getCorrelationType() {
 		return correlationType;
 	}
@@ -60,5 +87,5 @@ public class CorrelationRequest extends AnalysisRequest {
 	public void setCorrelationType(CorrelationType correlationType) {
 		this.correlationType = correlationType;
 	}
-
+	
 }
