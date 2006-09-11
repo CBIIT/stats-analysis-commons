@@ -9,6 +9,7 @@ public class FtestResultEntry implements java.io.Serializable {
 	private List<Double> groupAve = Collections.emptyList();
 	private double maximumFoldChange;
 	private double pvalue;
+	private String reporterId;
 	
 	public FtestResultEntry() {
 		super();
@@ -37,6 +38,14 @@ public class FtestResultEntry implements java.io.Serializable {
 
 	public void setPvalue(double pvalue) {
 		this.pvalue = pvalue;
+	}
+
+	public String getReporterId() {
+		return reporterId;
+	}
+
+	public void setReporterId(String reporterId) {
+		this.reporterId = reporterId;
 	}
 	 
 }
