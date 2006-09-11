@@ -5,7 +5,7 @@ import java.util.List;
 public class FTestResult extends AnalysisResult {
 
 	private static final long serialVersionUID = 1L;
-	private List<FtestResultEntry> ftResultEntries;
+	private List<FTestResultEntry> ftResultEntries;
 	private List<SampleGroup> sampleGroups;
 	private boolean arePvaluesAdjusted = false; 
 	
@@ -28,11 +28,11 @@ public class FTestResult extends AnalysisResult {
 		this.arePvaluesAdjusted = arePvaluesAdjusted;
 	}
 
-	public List<FtestResultEntry> getFtResultEntries() {
+	public List<FTestResultEntry> getFtResultEntries() {
 		return ftResultEntries;
 	}
 
-	public void setFtResultEntries(List<FtestResultEntry> ftResultEntries) {
+	public void setFtResultEntries(List<FTestResultEntry> ftResultEntries) {
 		this.ftResultEntries = ftResultEntries;
 	}
 
