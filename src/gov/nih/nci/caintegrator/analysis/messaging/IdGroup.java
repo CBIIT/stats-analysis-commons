@@ -69,7 +69,7 @@ import java.util.*;
 * 
 */
 
-public abstract class IdGroup extends HashSet<String> implements Serializable {
+public abstract class IdGroup extends LinkedHashSet<String> implements Serializable {
 
 	private String groupName;
 	
@@ -106,6 +106,10 @@ public abstract class IdGroup extends HashSet<String> implements Serializable {
 		  }
 		}
 		return sb.toString();
+	}
+	
+	public String toString() {
+	  return groupName + " size=" + size();	
 	}
 
 }
