@@ -34,4 +34,9 @@ public class DoubleVector implements Serializable {
       return -1;
 	}
 	
+	public String toString() {
+	  
+	  return name + " size=" + size();
+	}
+	
 }

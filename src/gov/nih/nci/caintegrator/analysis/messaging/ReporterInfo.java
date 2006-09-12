@@ -30,5 +30,9 @@ public class ReporterInfo implements Serializable {
 	public String getReporterName() {
 		return reporterName;
 	}
+	
+	public String toString() {
+	  return "ReporterInfo reporterName=" + reporterName + " geneSymbol=" + geneSymbol + " dataFileName=" + dataFileName;
+	}
 
 }

@@ -7,9 +7,6 @@ import java.io.Serializable;
 public class CorrelationRequest extends AnalysisRequest implements Serializable {
 
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private DoubleVector vector1 = null;
 	private DoubleVector vector2 = null;
@@ -17,9 +14,17 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	private ReporterInfo reporter1 = null;
 	private ReporterInfo reporter2 = null;
 	
-	private SampleGroup sampleGrp1 = null;
-	private SampleGroup sampleGrp2 = null;
+	//the patientIds list contains the patient id corresponding
+	//to the sampleId in the sampleId list. The patient id list
+	//should always be the same length as the sampleId list 
+	//the patientId list can have repeated entries (when two samples
+	//come from the same pateint)
 	
+	//the sampleIds are used together with reporter names to look up expression values for 
+	//reporters in the R binary file.
+	
+	private IdList sampleIds = null;
+	private IdList patientIds = null;
 	
 	private CorrelationType correlationType;
 	
@@ -51,25 +56,15 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	  	
 	  sb.append("CorrelationReqeust: sessionId=").append(getSessionId()).append(" taskId=" ).append(getTaskId());
 	  
-	  sb.append(" sampleGrp1=").append(sampleGrp1);
-	  sb.append(" sampleGrp2=").append(sampleGrp2);
 	  
-	  if (vector1 != null) {
-		sb.append(" vector1=").append(vector1.getName()).append(" len=").append(vector1.size());		  
-	  }
+	  sb.append(" sampleIds=").append(sampleIds);
+	  sb.append(" patientIds=").append(patientIds);
+	  sb.append(" vector1=").append(vector1);
+	  sb.append(" vector2=").append(vector2);
 	  
-	  if (vector2 != null) {
-		sb.append(" vector2=").append(vector2.getName()).append(" len=").append(vector2.size());		  
-	  }
-	  
-	  if (reporter1 != null) {
-	    sb.append(reporter1.toString());
-	  }
-	  
-	  if (reporter2 != null) {
-		sb.append(reporter2.toString());
-	  }
-	  
+	  sb.append(" reporter1=").append(reporter1);
+	  sb.append(" reporter2=").append(reporter2);
+	 
 	  sb.append(" ").append(correlationType.toString());
 	 
 	  return sb.toString();
@@ -94,28 +89,29 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 		this.correlationType = correlationType;
 	}
 
-	public SampleGroup getSampleGrp1() {
-		return sampleGrp1;
-	}
-
-	public void setSampleGrp1(SampleGroup sampleGrp1) {
-		this.sampleGrp1 = sampleGrp1;
-	}
-
-	public SampleGroup getSampleGrp2() {
-		return sampleGrp2;
-	}
-
-	public void setSampleGrp2(SampleGroup sampleGrp2) {
-		this.sampleGrp2 = sampleGrp2;
-	}
-
+	
 	public ReporterInfo getReporter1() {
 		return reporter1;
 	}
 
 	public ReporterInfo getReporter2() {
 		return reporter2;
+	}
+
+	public IdList getPatientIds() {
+		return patientIds;
+	}
+
+	public void setPatientIds(IdList patientIds) {
+		this.patientIds = patientIds;
+	}
+
+	public IdList getSampleIds() {
+		return sampleIds;
+	}
+
+	public void setSampleIds(IdList sampleIds) {
+		this.sampleIds = sampleIds;
 	}
 	
 }
