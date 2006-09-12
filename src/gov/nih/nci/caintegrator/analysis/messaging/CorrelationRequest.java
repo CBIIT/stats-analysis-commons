@@ -17,6 +17,9 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	private ReporterInfo reporter1 = null;
 	private ReporterInfo reporter2 = null;
 	
+	private SampleGroup sampleGrp1 = null;
+	private SampleGroup sampleGrp2 = null;
+	
 	
 	private CorrelationType correlationType;
 	
@@ -47,6 +50,9 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	  StringBuffer sb = new StringBuffer();
 	  	
 	  sb.append("CorrelationReqeust: sessionId=").append(getSessionId()).append(" taskId=" ).append(getTaskId());
+	  
+	  sb.append(" sampleGrp1=").append(sampleGrp1);
+	  sb.append(" sampleGrp2=").append(sampleGrp2);
 	  
 	  if (vector1 != null) {
 		sb.append(" vector1=").append(vector1.getName()).append(" len=").append(vector1.size());		  
@@ -86,6 +92,30 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 
 	public void setCorrelationType(CorrelationType correlationType) {
 		this.correlationType = correlationType;
+	}
+
+	public SampleGroup getSampleGrp1() {
+		return sampleGrp1;
+	}
+
+	public void setSampleGrp1(SampleGroup sampleGrp1) {
+		this.sampleGrp1 = sampleGrp1;
+	}
+
+	public SampleGroup getSampleGrp2() {
+		return sampleGrp2;
+	}
+
+	public void setSampleGrp2(SampleGroup sampleGrp2) {
+		this.sampleGrp2 = sampleGrp2;
+	}
+
+	public ReporterInfo getReporter1() {
+		return reporter1;
+	}
+
+	public ReporterInfo getReporter2() {
+		return reporter2;
 	}
 	
 }
