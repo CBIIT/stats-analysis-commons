@@ -23,6 +23,10 @@ public class FTestResultEntry implements java.io.Serializable {
 	public void setGroupAve(List<Double> groupAve) {
 		this.groupAve = groupAve;
 	}
+	
+	public void setGroupAverage(int index, Double value) {
+	  this.groupAve.set(index, value);
+	}
 
 	public double getMaximumFoldChange() {
 		return maximumFoldChange;

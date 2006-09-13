@@ -28,11 +28,11 @@ public class FTestResult extends AnalysisResult {
 		this.arePvaluesAdjusted = arePvaluesAdjusted;
 	}
 
-	public List<FTestResultEntry> getFtResultEntries() {
+	public List<FTestResultEntry> getResultEntries() {
 		return ftResultEntries;
 	}
 
-	public void setFtResultEntries(List<FTestResultEntry> ftResultEntries) {
+	public void setResultEntries(List<FTestResultEntry> ftResultEntries) {
 		this.ftResultEntries = ftResultEntries;
 	}
 
