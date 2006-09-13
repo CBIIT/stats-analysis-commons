@@ -71,6 +71,11 @@ public enum StatisticalMethodType implements Serializable{
 		public String toString() 
 		{ 
 			return "Wilcoxin Test:Mann-Whitney Test";
-		} }
+		} },
+       	FTest { 
+			public String toString() 
+			{ 
+				return "F-Test:One Way ANOVA";
+			} }
 	};
 
