@@ -1,8 +1,9 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class FTestResult extends AnalysisResult {
+public class FTestResult extends AnalysisResult implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private List<FTestResultEntry> ftResultEntries;

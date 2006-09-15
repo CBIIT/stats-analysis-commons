@@ -10,7 +10,6 @@ import gov.nih.nci.caintegrator.enumeration.StatisticalMethodType;
 
 public class FTestRequest extends AnalysisRequest implements Serializable {
 
-    
 	private static final long serialVersionUID = 1L;
 
 	private double foldChangeThreshold = Double.NEGATIVE_INFINITY;
@@ -27,13 +26,18 @@ public class FTestRequest extends AnalysisRequest implements Serializable {
 	
 	public FTestRequest(String sessionId, String taskId) {
 		super(sessionId, taskId);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+	  StringBuffer sb = new StringBuffer();
+	 
+	  sb.append("FTestRequest sessionId=").append(getSessionId()).append(" taskId=").append(getTaskId());
+	  
+	  for (SampleGroup sg : sampleGroups) {
+	    sb.append(" group=").append(sg.getGroupName()).append(" size=").append(sg.size());
+	  }
+	  return sb.toString();
 	}
 
 	public ArrayPlatformType getArrayPlatform() {
