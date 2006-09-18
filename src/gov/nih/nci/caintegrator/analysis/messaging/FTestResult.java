@@ -12,13 +12,11 @@ public class FTestResult extends AnalysisResult implements Serializable {
 	
 	public FTestResult(String sessionId, String taskId) {
 		super(sessionId, taskId);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "FTestResult: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numResultEntries=" + getNumResultEntries();
 	}
 
 	public boolean arePvaluesAdjusted() {
@@ -31,6 +29,13 @@ public class FTestResult extends AnalysisResult implements Serializable {
 
 	public List<FTestResultEntry> getResultEntries() {
 		return ftResultEntries;
+	}
+	
+	public int getNumResultEntries() { 
+	  if (ftResultEntries == null) {
+	    return 0;
+	  }
+	  return ftResultEntries.size();
 	}
 
 	public void setResultEntries(List<FTestResultEntry> ftResultEntries) {
