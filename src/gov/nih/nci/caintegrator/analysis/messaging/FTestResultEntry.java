@@ -1,32 +1,37 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class FTestResultEntry implements java.io.Serializable {
+public class FTestResultEntry implements ReporterEntry, java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private List<Double> groupAve = Collections.emptyList();
+	//private List<Double> groupAve = new ArrayList<Double>();
 	private double maximumFoldChange;
 	private double pvalue;
 	private String reporterId;
+	private double[] means;
 	
 	public FTestResultEntry() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public List<Double> getGroupAve() {
-		return groupAve;
-	}
+//	public List<Double> getGroupAve() {
+//		return Collections.emptyList();
+//	}
 
-	public void setGroupAve(List<Double> groupAve) {
-		this.groupAve = groupAve;
+	public void setGroupMeans(double[] means) {
+	  this.means = means;  
 	}
 	
-	public void setGroupAverage(int index, Double value) {
-	  this.groupAve.set(index, value);
+	public double[] getGroupMeans() {
+	  return means;
 	}
+	
+//	public void setGroupAverage(int index, Double value) {
+//	  this.groupAve.add(index, value);
+//	}
 
 	public double getMaximumFoldChange() {
 		return maximumFoldChange;
