@@ -111,5 +111,25 @@ public abstract class IdGroup extends LinkedHashSet<String> implements Serializa
 	public String toString() {
 	  return groupName + " size=" + size();	
 	}
+	
+	/**
+	 * 
+	 * @param groupToCheck
+	 * @return true if this group contains any of the members in groupToCheck
+	 * 		   false otherwise
+	 */
+	public boolean containsAny(IdGroup groupToCheck) {
+		
+	   if (groupToCheck == null) { 
+	      return false;
+	   }
+		
+	   for (String id : groupToCheck) {
+	      if (contains(id)) return true;
+	   }
+	   
+	   return false;
+	   
+	}
 
 }
