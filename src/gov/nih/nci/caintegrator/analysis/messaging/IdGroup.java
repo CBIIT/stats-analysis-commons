@@ -71,6 +71,8 @@ import java.util.*;
 
 public abstract class IdGroup extends LinkedHashSet<String> implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+	
 	private String groupName;
 	
 	public IdGroup(String groupName, int initialSize) {
