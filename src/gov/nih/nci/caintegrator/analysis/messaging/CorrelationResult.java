@@ -1,6 +1,7 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 public class CorrelationResult extends AnalysisResult implements Serializable {
@@ -10,8 +11,10 @@ public class CorrelationResult extends AnalysisResult implements Serializable {
 
 	private Double correlationValue = null;
 	
-	private DoubleVector vector1;
-	private DoubleVector vector2;
+	private String group1Name ;
+	private String group2Name ;
+	
+	private List<DataPoint> dataPoints = Collections.emptyList();
 	
 	public CorrelationResult(String sessionId, String taskId) {
 		super(sessionId, taskId);
@@ -25,25 +28,34 @@ public class CorrelationResult extends AnalysisResult implements Serializable {
 		this.correlationValue = correlationValue;
 	}
 
-	public DoubleVector getVector1() {
-		return vector1;
-	}
-
-	public void setVector1(DoubleVector vector1) {
-		this.vector1 = vector1;
-	}
-
-	public DoubleVector getVector2() {
-		return vector2;
-	}
-
-	public void setVector2(DoubleVector vector2) {
-		this.vector2 = vector2;
-	}
-
+	
 	@Override
 	public String toString() {
-		 return "CorrelationResult: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " vector1Name=" + vector1.getName() + " vector2Name=" + vector2.getName() + " corrValue=" + correlationValue;
+		 return "CorrelationResult: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " group1Name=" + getGroup1Name() + " group2Name=" + getGroup2Name() + " corrValue=" + correlationValue;
+	}
+
+	public List<DataPoint> getDataPoints() {
+		return dataPoints;
+	}
+
+	public void setDataPoints(List<DataPoint> dataPoints) {
+		this.dataPoints = dataPoints;
+	}
+
+	public String getGroup1Name() {
+		return group1Name;
+	}
+
+	public void setGroup1Name(String name) {
+		group1Name = name;
+	}
+
+	public String getGroup2Name() {
+		return group2Name;
+	}
+
+	public void setGroup2Name(String name) {
+		group2Name = name;
 	}
 
 }
