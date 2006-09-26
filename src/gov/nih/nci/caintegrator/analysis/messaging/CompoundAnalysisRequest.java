@@ -18,8 +18,7 @@ public class CompoundAnalysisRequest extends AnalysisRequest {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "CompoundAnalysisRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numRequests=" + getNumRequests();
 	}
 
 	public List<AnalysisRequest> getRequests() {

@@ -11,13 +11,11 @@ public class CompoundAnalysisResult extends AnalysisResult {
 
 	public CompoundAnalysisResult(String sessionId, String taskId) {
 		super(sessionId, taskId);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "CompoundAnalysisResult: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numResults=" + getNumResults();
 	}
 
 	public List<AnalysisResult> getResults() {
