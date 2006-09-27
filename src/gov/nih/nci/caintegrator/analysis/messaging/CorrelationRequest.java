@@ -3,13 +3,18 @@ package gov.nih.nci.caintegrator.analysis.messaging;
 import gov.nih.nci.caintegrator.enumeration.CorrelationType;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class CorrelationRequest extends AnalysisRequest implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	private DoubleVector vector1 = null;
-	private DoubleVector vector2 = null;
+	private List<DataPoint> vector1 = null;
+	private String vector1Name = null;
+	
+	
+	private List<DataPoint> vector2 = null;
+	private String vector2Name = null;
 	
 	private ReporterInfo reporter1 = null;
 	private ReporterInfo reporter2 = null;
@@ -31,14 +36,6 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	public CorrelationRequest(String sessionId, String taskId) {
 		super(sessionId, taskId);
 		
-	}
-	
-	public void setVector1(DoubleVector vector1) {
-	  this.vector1 = vector1;
-	}
-	
-	public void setVector2(DoubleVector vector2) {
-	  this.vector2 = vector2;
 	}
 	
 	public void setReporter1(ReporterInfo reporter1) {
@@ -71,16 +68,6 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	  
 	}
 
-	public DoubleVector getVector1() {
-		return vector1;
-	}
-
-	
-	public DoubleVector getVector2() {
-		return vector2;
-	}
-
-	
 	public CorrelationType getCorrelationType() {
 		return correlationType;
 	}
@@ -112,6 +99,30 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 
 	public void setSampleIds(IdList sampleIds) {
 		this.sampleIds = sampleIds;
+	}
+
+	public String getVector1Name() {
+		return vector1Name;
+	}
+
+	public void setVector1Name(String vector1Name) {
+		this.vector1Name = vector1Name;
+	}
+
+	public String getVector2Name() {
+		return vector2Name;
+	}
+
+	public void setVector2Name(String vector2Name) {
+		this.vector2Name = vector2Name;
+	}
+
+	public void setVector1(List<DataPoint> vector1) {
+		this.vector1 = vector1;
+	}
+
+	public void setVector2(List<DataPoint> vector2) {
+		this.vector2 = vector2;
 	}
 	
 }
