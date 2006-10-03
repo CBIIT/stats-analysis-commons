@@ -75,6 +75,8 @@ public class ClassComparisonResultEntry implements ReporterEntry,  java.io.Seria
 	private double meanDiff;
 	private double absoluteFoldChange;
 	private double pvalue;
+	private double stdBaselineGrp;
+	private double stdGrp1;
 	
 	public ClassComparisonResultEntry() {
 		super();
@@ -133,6 +135,22 @@ public class ClassComparisonResultEntry implements ReporterEntry,  java.io.Seria
 
 	public void setReporterId(String reporterId) {
 		this.reporterId = reporterId;
+	}
+
+	public double getStdBaselineGrp() {
+		return stdBaselineGrp;
+	}
+
+	public void setStdBaselineGrp(double stdBaselineGrp) {
+		this.stdBaselineGrp = stdBaselineGrp;
+	}
+
+	public double getStdGrp1() {
+		return stdGrp1;
+	}
+
+	public void setStdGrp1(double stdGrp1) {
+		this.stdGrp1 = stdGrp1;
 	}
 
 }

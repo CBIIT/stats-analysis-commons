@@ -7,15 +7,15 @@ package gov.nih.nci.caintegrator.analysis.messaging;
  */
 public class DataPoint implements java.io.Serializable {
     private String id;
-    private double x;
-    private double y;
-    private double z;
+    private Double x = null;
+    private Double y = null;
+    private Double z = null;
   
     public DataPoint(String id) {
       this.id = id;
     }
 
-	public double getX() {
+	public Double getX() {
 		return x;
 	}
 	
@@ -23,7 +23,7 @@ public class DataPoint implements java.io.Serializable {
 		this.x = x;
 	}
 	
-	public double getY() {
+	public Double getY() {
 		return y;
 	}
 	
@@ -31,7 +31,7 @@ public class DataPoint implements java.io.Serializable {
 		this.y = y;
 	}
 	
-	public double getZ() {
+	public Double getZ() {
 		return z;
 	}
 	
@@ -39,9 +39,13 @@ public class DataPoint implements java.io.Serializable {
 		this.z = z;
 	}
 
-public String getId() {
-	return id;
-}
+    public String getId() {
+	  return id;
+    }
+    
+    public String toString() {
+      return "id=" + id + " (" + x + "," + y + "," + z + ")";
+    }
   
   
   

@@ -124,5 +124,15 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	public void setVector2(List<DataPoint> vector2) {
 		this.vector2 = vector2;
 	}
+
+	public List<DataPoint> getVector1() {
+		return vector1;
+	}
+
+	public List<DataPoint> getVector2() {
+		return vector2;
+	}
+	
+	
 	
 }
