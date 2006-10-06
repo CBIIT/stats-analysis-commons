@@ -54,10 +54,21 @@ public class CorrelationRequest extends AnalysisRequest implements Serializable 
 	  sb.append("CorrelationReqeust: sessionId=").append(getSessionId()).append(" taskId=" ).append(getTaskId());
 	  
 	  
-	  sb.append(" sampleIds=").append(sampleIds);
+	  sb.append(" sampleIds.size()=").append(sampleIds.size());
 	  sb.append(" patientIds=").append(patientIds);
-	  sb.append(" vector1=").append(vector1);
-	  sb.append(" vector2=").append(vector2);
+	  if (vector1 != null) {
+	    sb.append(" vector1.size()=").append(vector1.size());
+	  }
+	  else {
+	    sb.append(" vector1=null");
+	  }
+	  
+	  if (vector2 != null) {
+	    sb.append(" vector2.size()=").append(vector2.size());
+	  }
+	  else {
+	    sb.append(" vector2=null");
+	  }
 	  
 	  sb.append(" reporter1=").append(reporter1);
 	  sb.append(" reporter2=").append(reporter2);
