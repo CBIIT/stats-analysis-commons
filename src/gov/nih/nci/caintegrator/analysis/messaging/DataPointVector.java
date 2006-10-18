@@ -36,5 +36,9 @@ public class DataPointVector implements Serializable {
 	public void addDataPoint(DataPoint point) {
 	  dataPoints.add(point);
 	}
+	
+	public int size() {
+	  return dataPoints.size();
+	}
 
 }
