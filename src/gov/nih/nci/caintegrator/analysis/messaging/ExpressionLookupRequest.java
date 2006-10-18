@@ -1,10 +1,16 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+/**
+ * This is the request object to be used for looking up expression values
+ * from a data file.
+ * @author harrismic
+ *
+ */
 public class ExpressionLookupRequest extends AnalysisRequest {
 
 	private ReporterGroup reporters;
 	private SampleGroup samples;
-
+	//the data file to use comes from the parent class
 	
 	public ExpressionLookupRequest(String sessionId, String taskId) {
 		super(sessionId, taskId);		
