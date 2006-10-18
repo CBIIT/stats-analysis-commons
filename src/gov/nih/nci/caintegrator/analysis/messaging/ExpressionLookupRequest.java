@@ -4,21 +4,25 @@ public class ExpressionLookupRequest extends AnalysisRequest {
 
 	private ReporterGroup reporters;
 	private SampleGroup samples;
+
 	
 	public ExpressionLookupRequest(String sessionId, String taskId) {
-		super(sessionId, taskId);
-		// TODO Auto-generated constructor stub
+		super(sessionId, taskId);		
 	}
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		int numReporters = -1;
+		if (reporters!=null) {
+		  numReporters = reporters.size();
+		}
+		int numSamples = -1;
+		if (samples!=null) {
+		  numSamples = samples.size();
+		}		
+		return "ExpressionLookupRequest sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numReportersRequested=" + numReporters + " numSamplesRequested=" + numSamples;
 	}
 
 	public ReporterGroup getReporters() {
