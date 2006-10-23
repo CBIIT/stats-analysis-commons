@@ -7,6 +7,7 @@ public class ReporterInfo implements Serializable {
 	private String reporterName;
 	private String geneSymbol;
 	private String dataFileName;
+	private SampleGroup sampleGroup = null;
 	
 	/**
 	 * 
@@ -33,6 +34,14 @@ public class ReporterInfo implements Serializable {
 	
 	public String toString() {
 	  return "ReporterInfo reporterName=" + reporterName + " geneSymbol=" + geneSymbol + " dataFileName=" + dataFileName;
+	}
+
+	public void setSampleGroup(SampleGroup sampleGroup) {
+	  this.sampleGroup = sampleGroup;	
+	}
+
+	public SampleGroup getSampleGroup() {
+		return sampleGroup;
 	}
 
 }
