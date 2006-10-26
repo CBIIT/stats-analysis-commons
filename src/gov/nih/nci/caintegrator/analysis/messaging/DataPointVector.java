@@ -40,5 +40,56 @@ public class DataPointVector implements Serializable {
 	public int size() {
 	  return dataPoints.size();
 	}
+	
+	/**
+	 * Get a list of Doubles corresponding to the X values.
+	 * @return
+	 */
+	public List<Double> getXValues() {
+	  List<Double> xValues = new ArrayList<Double>();
+	  for (DataPoint point : dataPoints) {
+		 if (point != null) {
+	       xValues.add(point.getX());
+		 }
+		 else {
+		   xValues.add(null);
+		 }
+	  }
+	  return xValues;
+	}
+	
+	/**
+	 * Get a list of Doubles corresponding to the Y values.
+	 * @return
+	 */
+	public List<Double> getYValues() {
+	  List<Double> yValues = new ArrayList<Double>();
+	  for (DataPoint point : dataPoints) {
+		 if (point != null) {
+	       yValues.add(point.getY());
+		 }
+		 else {
+		   yValues.add(null);
+		 }
+	  }
+	  return yValues;
+	}
+	
+	/**
+	 * Get a list of Doubles corresponding to the Z values.
+	 * @return
+	 */
+	public List<Double> getZValues() {
+	  List<Double> zValues = new ArrayList<Double>();
+	  for (DataPoint point : dataPoints) {
+		 if (point != null) {
+	       zValues.add(point.getZ());
+		 }
+		 else {
+		   zValues.add(null);
+		 }
+	  }
+	  return zValues;
+	}
 
 }
