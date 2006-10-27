@@ -41,17 +41,25 @@ public class DataPointVector implements Serializable {
 	  return dataPoints.size();
 	}
 	
+	public List<Double> getXValues() {
+	  return getXValues(false);
+	}
+	
 	/**
 	 * Get a list of Doubles corresponding to the X values.
 	 * @return
-	 */
-	public List<Double> getXValues() {
+	 */	
+	public List<Double> getXValues(boolean includeNulls) {
 	  List<Double> xValues = new ArrayList<Double>();
+	  Double val = null;
 	  for (DataPoint point : dataPoints) {
 		 if (point != null) {
-	       xValues.add(point.getX());
+		   val = point.getX();
+		   if ((val != null)||(includeNulls)) {
+	         xValues.add(point.getX());
+		   }
 		 }
-		 else {
+		 else if (includeNulls){
 		   xValues.add(null);
 		 }
 	  }
@@ -62,34 +70,50 @@ public class DataPointVector implements Serializable {
 	 * Get a list of Doubles corresponding to the Y values.
 	 * @return
 	 */
-	public List<Double> getYValues() {
+	public List<Double> getYValues(boolean includeNulls) {
 	  List<Double> yValues = new ArrayList<Double>();
+	  Double val = null;
 	  for (DataPoint point : dataPoints) {
 		 if (point != null) {
-	       yValues.add(point.getY());
+		   val = point.getY();
+		   if ((val != null)||(includeNulls)) {
+	         yValues.add(point.getY());
+		   }
 		 }
-		 else {
+		 else if (includeNulls) {
 		   yValues.add(null);
 		 }
 	  }
 	  return yValues;
 	}
 	
+	public List<Double> getYValues() {
+	  return getYValues(false);
+	}
+	
+	
 	/**
 	 * Get a list of Doubles corresponding to the Z values.
 	 * @return
 	 */
-	public List<Double> getZValues() {
+	public List<Double> getZValues(boolean includeNulls) {
 	  List<Double> zValues = new ArrayList<Double>();
+	  Double val = null;
 	  for (DataPoint point : dataPoints) {
 		 if (point != null) {
-	       zValues.add(point.getZ());
+		   if ((val != null)||(includeNulls)) {
+	         zValues.add(point.getZ());
+		   }
 		 }
 		 else {
 		   zValues.add(null);
 		 }
 	  }
 	  return zValues;
+	}
+	
+	public List<Double> getZValues() {
+	  return getZValues(false);
 	}
 
 }
