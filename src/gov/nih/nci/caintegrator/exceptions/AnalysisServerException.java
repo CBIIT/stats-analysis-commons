@@ -69,6 +69,8 @@ import gov.nih.nci.caintegrator.analysis.messaging.AnalysisRequest;
 
 public class AnalysisServerException extends FrameworkException {
 
+	
+	private static final long serialVersionUID = 1L;
 	private AnalysisRequest failedRequest;
 	
 	
