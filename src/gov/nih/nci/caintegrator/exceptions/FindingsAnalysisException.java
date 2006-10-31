@@ -61,6 +61,9 @@ package gov.nih.nci.caintegrator.exceptions;
 
 public class FindingsAnalysisException extends FrameworkException {
 
+	
+	private static final long serialVersionUID = 1L;
+
 	public FindingsAnalysisException(String string) {
 		super(string);
 	}
