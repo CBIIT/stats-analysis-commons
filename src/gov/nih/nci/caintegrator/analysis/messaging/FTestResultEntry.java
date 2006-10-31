@@ -1,8 +1,5 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class FTestResultEntry implements ReporterEntry, java.io.Serializable {
 

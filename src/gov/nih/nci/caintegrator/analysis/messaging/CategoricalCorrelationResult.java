@@ -2,7 +2,6 @@ package gov.nih.nci.caintegrator.analysis.messaging;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CategoricalCorrelationResult extends AnalysisResult implements Serializable {
