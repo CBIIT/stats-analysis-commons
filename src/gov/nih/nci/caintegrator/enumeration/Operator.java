@@ -71,7 +71,11 @@ import java.io.Serializable;
 public enum Operator implements Serializable{
 	GT, //greater than
 	LT, //less than
-	EQ, //equals
+	EQ{ 
+        public String toString() 
+        { 
+            return "=";
+        } }, //equals
 	NE, //not equal to
 	GE { 
         public String toString() 
