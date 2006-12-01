@@ -91,6 +91,10 @@ AFFY_100K_SNP_ARRAY {
 		public String toString()
 		{ 
 			return "Affymetrix 100K SNP Arrays";
-		}
-	}
+		}},
+UNIFIED_GENE {
+	public String toString()
+	{ 
+		return "Unified Gene";
+	}}
 }
