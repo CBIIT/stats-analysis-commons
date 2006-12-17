@@ -1,4 +1,4 @@
-<project name="caintegrator-analysis-commons" default="build_jar" basedir=".">
+<project name="caintegrator-analysis-commons" default="build_dependency" basedir=".">
 	<property file="basic_build.properties" />
 	<!--
 	TARGET: COMPILE
@@ -8,6 +8,7 @@
 		<echo>
 			Artifacts copied to ${anthill.artifacts.dir}
 		</echo>
+		<delete dir="${anthill.artifacts.dir}" failonerror="false" />
 		<copy file="caintegrator-analysis-commons.jar" todir="${anthill.artifacts.dir}" />
 	</target>
 	<target name="jar_check">
