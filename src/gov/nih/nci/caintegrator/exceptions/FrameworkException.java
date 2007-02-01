@@ -66,4 +66,7 @@ public class FrameworkException extends Throwable {
 	public FrameworkException(String string) {
 		super(string);
 	}
+	public FrameworkException(Throwable exception) {
+	    super(exception);
+	}
 }

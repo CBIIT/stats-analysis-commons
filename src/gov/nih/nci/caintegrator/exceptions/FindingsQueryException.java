@@ -69,5 +69,9 @@ public class FindingsQueryException extends FrameworkException{
 	public FindingsQueryException(String string) {
 		super(string);
 	}
+    
+    public FindingsQueryException(Throwable e) {
+        super(e);
+    }
 
 }
