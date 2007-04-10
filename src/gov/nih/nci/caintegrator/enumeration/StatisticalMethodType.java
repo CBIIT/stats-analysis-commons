@@ -76,6 +76,11 @@ public enum StatisticalMethodType implements Serializable{
 			public String toString() 
 			{ 
 				return "F-Test:One Way ANOVA";
-			} }
+			} },
+		GLM { 
+			public String toString() 
+			{ 
+				return "Generalized Linear Model with/without covariate adjustment";
+			} }		
 	};
 
