@@ -96,5 +96,15 @@ UNIFIED_GENE {
 	public String toString()
 	{ 
 		return "Unified Gene";
+	}},
+BLOOD_ARRAY {
+	public String toString()
+	{ 
+	 return "Blood";
+	}},
+TISSUE_ARRAY {
+    public String toString()
+	{ 
+	return "Tissue";
 	}}
 }
