@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public class GLMTestRequest extends AnalysisRequest implements Serializable {	
+public class GeneralizedLinearModelRequest extends AnalysisRequest implements Serializable {	
 	
 	private static final long serialVersionUID = 1L;
 	private StatisticalMethodType statisticalMethod;
@@ -21,7 +21,7 @@ public class GLMTestRequest extends AnalysisRequest implements Serializable {
 	
 	// TODO: need to come back to do array platform
 	
-	public GLMTestRequest(String sessionid, String taskId) {
+	public GeneralizedLinearModelRequest(String sessionid, String taskId) {
 		super(sessionid, taskId);
 	}
 	public SampleGroup getBaselineGroup() {

@@ -2,7 +2,7 @@ package gov.nih.nci.caintegrator.analysis.messaging;
 
 import java.io.Serializable;
 
-public class GLMTestResultEntry implements ReporterEntry, Serializable {
+public class GeneralizedLinearModelResultEntry implements ReporterEntry, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -58,7 +58,7 @@ public class GLMTestResultEntry implements ReporterEntry, Serializable {
 		return reporterId;		
 	}
 	
-	public GLMTestResultEntry() {
+	public GeneralizedLinearModelResultEntry() {
 		super();
 	}
 
