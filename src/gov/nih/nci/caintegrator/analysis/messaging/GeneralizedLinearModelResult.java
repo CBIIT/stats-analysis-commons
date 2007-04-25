@@ -41,4 +41,37 @@ public class GeneralizedLinearModelResult extends AnalysisResult implements Seri
 
 	}
 
+
+	public SampleGroup getBaselineGroup() {
+		return baselineGroup;
+	}
+
+
+	public void setBaselineGroup(SampleGroup baselineGroup) {
+		this.baselineGroup = baselineGroup;
+	}
+
+
+	public List<GeneralizedLinearModelResultEntry> getGlmResultEntries() {
+		return glmResultEntries;
+	}
+
+
+	public void setGlmResultEntries(
+			List<GeneralizedLinearModelResultEntry> glmResultEntries) {
+		this.glmResultEntries = glmResultEntries;
+	}
+
+
+	public SampleGroup getGroup1() {
+		return group1;
+	}
+
+
+	public void setGroup1(SampleGroup group1) {
+		this.group1 = group1;
+	}
+	
+	
+
 }

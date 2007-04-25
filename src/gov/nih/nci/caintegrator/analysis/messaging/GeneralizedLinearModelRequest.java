@@ -5,6 +5,7 @@ import gov.nih.nci.caintegrator.enumeration.MultiGroupComparisonAdjustmentType;
 import gov.nih.nci.caintegrator.enumeration.StatisticalMethodType;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	private static final long serialVersionUID = 1L;
 	private StatisticalMethodType statisticalMethod;
 	private CoVariateType coVariateType;
+	private List<CoVariateType> coVariateTypes = new ArrayList<CoVariateType>();
 	private MultiGroupComparisonAdjustmentType multiGrpComparisonAdjType = MultiGroupComparisonAdjustmentType.NONE;	
 	private SampleGroup group1 = null;
 	private SampleGroup baselineGroup = null;
@@ -35,6 +37,12 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	}
 	public void setCoVariateType(CoVariateType coVariateType) {
 		this.coVariateType = coVariateType;
+	}
+	public List<CoVariateType> getCoVariateTypes() {
+		return coVariateTypes;
+	}
+	public void setCoVariateTypes(List<CoVariateType> coVariateTypes) {
+		this.coVariateTypes = coVariateTypes;
 	}
 	public double getFoldChangeThreshold() {
 		return foldChangeThreshold;
