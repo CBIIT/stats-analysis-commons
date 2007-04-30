@@ -16,7 +16,7 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	private CoVariateType coVariateType;
 	private List<CoVariateType> coVariateTypes = new ArrayList<CoVariateType>();
 	private MultiGroupComparisonAdjustmentType multiGrpComparisonAdjType = MultiGroupComparisonAdjustmentType.NONE;	
-	private SampleGroup group1 = null;
+	private List<SampleGroup>  comparisonGroups =  Collections.emptyList();;
 	private SampleGroup baselineGroup = null;
 	private double foldChangeThreshold = Double.NEGATIVE_INFINITY;
 	private double pValueThreshold = Double.POSITIVE_INFINITY;
@@ -50,12 +50,7 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	public void setFoldChangeThreshold(double foldChangeThreshold) {
 		this.foldChangeThreshold = foldChangeThreshold;
 	}
-	public SampleGroup getGroup1() {
-		return group1;
-	}
-	public void setGroup1(SampleGroup group1) {
-		this.group1 = group1;
-	}
+
 	public MultiGroupComparisonAdjustmentType getMultiGrpComparisonAdjType() {
 		return multiGrpComparisonAdjType;
 	}
@@ -83,23 +78,26 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 		    blGroupSize = baselineGroup.size();
 		  }
 		  
-		  int group1Size = -1;
-		  if (group1 !=null) {
-		    group1Size = group1.size();
-		  }
 			
-		  String retStr = "GLMTestRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " blGroupSize=" + blGroupSize + " group1Szie=" + group1Size;
+		  String retStr = "GLMTestRequest: sessionId=" + getSessionId() + " taskId=" + getTaskId() + " blGroupSize=" + blGroupSize ;
 		  
-		  if (group1 != null) { 
-		    retStr += " GRP1=" + group1.getGroupName();
-		  }
 		  
 		  if (baselineGroup != null) {
 		    retStr += " baselineGroup=" + baselineGroup.getGroupName();
 		  }
+          for (SampleGroup sg : comparisonGroups) {
+                retStr += " group=" + sg.getGroupName() + " size=" + sg.size();
+          }          
 		  
 		  return retStr;
 	}
+    public List<SampleGroup> getComparisonGroups() {
+        return comparisonGroups;
+    }
+    public void setComparisonGroups(List<SampleGroup> comparisonGroups) {
+        this.comparisonGroups = comparisonGroups;
+    }
+
 	
 
 }
