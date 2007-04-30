@@ -16,8 +16,8 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	private CoVariateType coVariateType;
 	private List<CoVariateType> coVariateTypes = new ArrayList<CoVariateType>();
 	private MultiGroupComparisonAdjustmentType multiGrpComparisonAdjType = MultiGroupComparisonAdjustmentType.NONE;	
-	private List<SampleGroup>  comparisonGroups =  Collections.emptyList();;
-	private SampleGroup baselineGroup = null;
+	private List<GLMSampleGroup>  comparisonGroups =  Collections.emptyList();;
+	private GLMSampleGroup baselineGroup = null;
 	private double foldChangeThreshold = Double.NEGATIVE_INFINITY;
 	private double pValueThreshold = Double.POSITIVE_INFINITY;
 	
@@ -29,7 +29,7 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	public SampleGroup getBaselineGroup() {
 		return baselineGroup;
 	}
-	public void setBaselineGroup(SampleGroup baselineGroup) {
+	public void setBaselineGroup(GLMSampleGroup baselineGroup) {
 		this.baselineGroup = baselineGroup;
 	}
 	public CoVariateType getCoVariateType() {
@@ -91,10 +91,10 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 		  
 		  return retStr;
 	}
-    public List<SampleGroup> getComparisonGroups() {
+    public List<GLMSampleGroup> getComparisonGroups() {
         return comparisonGroups;
     }
-    public void setComparisonGroups(List<SampleGroup> comparisonGroups) {
+    public void setComparisonGroups(List<GLMSampleGroup> comparisonGroups) {
         this.comparisonGroups = comparisonGroups;
     }
 

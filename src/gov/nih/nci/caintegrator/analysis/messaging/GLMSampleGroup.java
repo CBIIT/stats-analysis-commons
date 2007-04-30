@@ -11,6 +11,8 @@ public class GLMSampleGroup extends SampleGroup {
 	
 	public GLMSampleGroup(String groupName) {
 		super(groupName, 50);
+		annotationMap = new HashMap();
+
 	}
 	
 	public void addPatientData(String sid, HashMap<String, String> am){
