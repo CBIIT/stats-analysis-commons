@@ -13,7 +13,7 @@ public class GLMSampleGroup extends SampleGroup {
 		super(groupName, 50);
 	}
 	
-	public void addPatient(String sid, HashMap<String, String> am){
+	public void addPatientData(String sid, HashMap<String, String> am){
 		setPatientInAnnotationMap(sid, am);
 	}
 
