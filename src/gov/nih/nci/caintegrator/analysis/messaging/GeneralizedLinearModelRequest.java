@@ -32,12 +32,14 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	public void setBaselineGroup(GLMSampleGroup baselineGroup) {
 		this.baselineGroup = baselineGroup;
 	}
+	/*
 	public CoVariateType getCoVariateType() {
 		return coVariateType;
 	}
 	public void setCoVariateType(CoVariateType coVariateType) {
 		this.coVariateType = coVariateType;
 	}
+	*/
 	public List<CoVariateType> getCoVariateTypes() {
 		return coVariateTypes;
 	}
