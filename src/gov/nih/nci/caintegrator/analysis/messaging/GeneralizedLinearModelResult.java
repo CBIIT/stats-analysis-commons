@@ -16,12 +16,8 @@ public class GeneralizedLinearModelResult extends AnalysisResult implements Seri
 	/*
 	 * the group that compares with baseline group
 	 */
-	private SampleGroup group1;
+	private List<SampleGroup> sampleGroups;
 	
-	/*
-	 * the baseline group
-	 */
-	private SampleGroup baselineGroup;
 	
 	public GeneralizedLinearModelResult(String sessionId, String taskId) {
 		super(sessionId, taskId);
@@ -42,14 +38,6 @@ public class GeneralizedLinearModelResult extends AnalysisResult implements Seri
 	}
 
 
-	public SampleGroup getBaselineGroup() {
-		return baselineGroup;
-	}
-
-
-	public void setBaselineGroup(SampleGroup baselineGroup) {
-		this.baselineGroup = baselineGroup;
-	}
 
 
 	public List<GeneralizedLinearModelResultEntry> getGlmResultEntries() {
@@ -63,14 +51,15 @@ public class GeneralizedLinearModelResult extends AnalysisResult implements Seri
 	}
 
 
-	public SampleGroup getGroup1() {
-		return group1;
-	}
+    public List<SampleGroup> getSampleGroups() {
+        return sampleGroups;
+    }
 
 
-	public void setGroup1(SampleGroup group1) {
-		this.group1 = group1;
-	}
+    public void setSampleGroups(List<SampleGroup> sampleGroups) {
+        this.sampleGroups = sampleGroups;
+    }
+
 	
 	
 
