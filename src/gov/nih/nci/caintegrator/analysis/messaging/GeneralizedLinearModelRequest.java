@@ -20,10 +20,17 @@ public class GeneralizedLinearModelRequest extends AnalysisRequest implements Se
 	private GLMSampleGroup baselineGroup = null;
 	private double foldChangeThreshold = Double.NEGATIVE_INFINITY;
 	private double pValueThreshold = Double.POSITIVE_INFINITY;
+    private Double geneVariance;
 	
 	// TODO: need to come back to do array platform
 	
-	public GeneralizedLinearModelRequest(String sessionid, String taskId) {
+	public Double getGeneVariance() {
+        return geneVariance;
+    }
+    public void setGeneVariance(Double geneVariance) {
+        this.geneVariance = geneVariance;
+    }
+    public GeneralizedLinearModelRequest(String sessionid, String taskId) {
 		super(sessionid, taskId);
 	}
 	public SampleGroup getBaselineGroup() {
