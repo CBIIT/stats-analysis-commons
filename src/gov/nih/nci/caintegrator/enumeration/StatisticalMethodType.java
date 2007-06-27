@@ -81,6 +81,11 @@ public enum StatisticalMethodType implements Serializable{
 			public String toString() 
 			{ 
 				return "Generalized Linear Model with/without covariate adjustment";
-			} }		
+			} }	,
+		ANOVA { 
+			public String toString() 
+			{ 
+			    return "ANOVA that adjusts for covariates";
+			} } 	
 	};
 
