@@ -1,5 +1,8 @@
 package gov.nih.nci.caintegrator.analysis.messaging;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * This class is sent back from the analysis server in response 
@@ -11,7 +14,7 @@ public class ExpressionLookupResult extends AnalysisResult {
 
 	private static final long serialVersionUID = 1L;
 	
-	private DataPointVector dataPoints = null;
+	private List<DataPointVector> dataVectors = new ArrayList<DataPointVector>();
 	
 	public ExpressionLookupResult(String sessionId, String taskId) {
 		super(sessionId, taskId);		
@@ -19,27 +22,25 @@ public class ExpressionLookupResult extends AnalysisResult {
 
 	@Override
 	public String toString() {
-		int numDataPoints = 0;
-		if (dataPoints != null) {
-		  numDataPoints = dataPoints.size();
+		int numDataVectors = 0;
+		if (dataVectors != null) {
+		  numDataVectors = dataVectors.size();
 		}
-		return "ExpressionLookupResult sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numDataPoints=" + numDataPoints; 
+		return "ExpressionLookupResult sessionId=" + getSessionId() + " taskId=" + getTaskId() + " numDataPoints=" + numDataVectors; 
 	}
 
-	public DataPointVector getDataPoints() {
-		return dataPoints;
+	
+	
+	public List<DataPointVector> getDataVectors() {
+		return dataVectors;
 	}
 
-	public void setDataPoints(DataPointVector dataPoints) {
-		this.dataPoints = dataPoints;
+	public void setDataVectors(List<DataPointVector> dataVectors) {
+		this.dataVectors = dataVectors;
 	}
 	
-	public int getNumDataPoints() { 
-	  int numDataPoints = 0;
-	  if (dataPoints!=null) {
-	    numDataPoints = dataPoints.size();
-	  }
-	  return numDataPoints;
+	public void addDataVector(DataPointVector vector) {
+	  dataVectors.add(vector);
 	}
 	
 	
