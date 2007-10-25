@@ -18,7 +18,7 @@ public class DataPointVector implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<DataPoint> dataPoints = new ArrayList<DataPoint>();
 	private String name;
-	private Double geometricMean = null;
+	private Double mean = null;
 	private Double stdDeviation = null;
 	
 	public List<DataPoint> getDataPoints() {
@@ -119,19 +119,19 @@ public class DataPointVector implements Serializable {
 	  return getZValues(false);
 	}
 
-	public Double getGeometricMean() {
+	public Double getMean() {
 		
-		if (geometricMean == null) {
-		  geometricMean = computeGeometricMean();
+		if (mean == null) {
+		  mean = computeMean();
 		}
 		
 		
-		return geometricMean;
+		return mean;
 	}
 
 	
 
-	private Double computeGeometricMean() {
+	private Double computeMean() {
 		double gm = -1;
 		
 		return new Double(-1.0);
