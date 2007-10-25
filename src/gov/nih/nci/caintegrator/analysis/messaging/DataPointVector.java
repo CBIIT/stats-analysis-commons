@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
+
 /**
  * This class holds a named list of data points. It is used to 
  * return expression values for a reporter.  The reporter name is set 
@@ -18,8 +20,7 @@ public class DataPointVector implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<DataPoint> dataPoints = new ArrayList<DataPoint>();
 	private String name;
-	private Double mean = null;
-	private Double stdDeviation = null;
+	
 	
 	public List<DataPoint> getDataPoints() {
 		return dataPoints;
@@ -120,72 +121,72 @@ public class DataPointVector implements Serializable {
 	}
 
 	public Double getMeanZ() {
+	 
+		return computeMean(getZValues());
 		
-		if (mean == null) {
-		  mean = computeMean();
-		}
-		
-		
-		return mean;
 	}
 
 	public Double getMeanY() {
 		
-		if (mean == null) {
-		  mean = computeMean();
-		}
+	  return computeMean(getYValues());
 		
-		
-		return mean;
 	}
 	
 	public Double getMeanX() {
 		
-		if (mean == null) {
-		  mean = computeMean();
-		}
+		return computeMean(getXValues());
 		
-		
-		return mean;
 	}
 
-	private Double computeMean() {
-		double gm = -1;
+	/**
+	 * Compute the mean of the values in the list
+	 * @param values
+	 * @return
+	 */
+	private Double computeMean(List<Double> values) {
 		
-		return new Double(-1.0);
+		DescriptiveStatistics stats = DescriptiveStatistics.newInstance(); 
+		
+//		 Add the data from the array
+		for(Double value : values) {
+		  stats.addValue(value);
+		}
+		double mean = stats.getMean();
+		return new Double(mean);
 	}
 
 	public Double getStdDeviationX() {
 		
-		if (stdDeviation == null) {
-		  stdDeviation = computeStdDeviation();
-		}
+		return computeStdDeviation(getXValues());
 		
-		return stdDeviation;
 	}
 	
 	public Double getStdDeviationY() {
 		
-		if (stdDeviation == null) {
-		  stdDeviation = computeStdDeviation();
-		}
-		
-		return stdDeviation;
+	  return computeStdDeviation(getYValues());
+	  
 	}
 	
 	public Double getStdDeviationZ() {
 		
-		if (stdDeviation == null) {
-		  stdDeviation = computeStdDeviation();
-		}
+	  return computeStdDeviation(getZValues());
 		
-		return stdDeviation;
 	}
 
-	private Double computeStdDeviation() {
-		return new Double(-1.0);
-	}
+	private Double computeStdDeviation(List<Double> values) {
+		DescriptiveStatistics stats = DescriptiveStatistics.newInstance(); 
+		
+//		 Add the data from the array
+		for(Double value : values) {
+		  stats.addValue(value);
+		}
 
-	
+//		 Compute some statistics 
+		//double mean = stats.getMean();
+//		double median = stats.getMedian();
+		double std = stats.getStandardDeviation();
+		return new Double(std);
+		
+	}
 
 }
