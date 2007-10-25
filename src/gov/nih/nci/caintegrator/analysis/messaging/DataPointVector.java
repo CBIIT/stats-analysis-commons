@@ -119,7 +119,7 @@ public class DataPointVector implements Serializable {
 	  return getZValues(false);
 	}
 
-	public Double getMean() {
+	public Double getMeanZ() {
 		
 		if (mean == null) {
 		  mean = computeMean();
@@ -129,7 +129,25 @@ public class DataPointVector implements Serializable {
 		return mean;
 	}
 
+	public Double getMeanY() {
+		
+		if (mean == null) {
+		  mean = computeMean();
+		}
+		
+		
+		return mean;
+	}
 	
+	public Double getMeanX() {
+		
+		if (mean == null) {
+		  mean = computeMean();
+		}
+		
+		
+		return mean;
+	}
 
 	private Double computeMean() {
 		double gm = -1;
@@ -137,7 +155,25 @@ public class DataPointVector implements Serializable {
 		return new Double(-1.0);
 	}
 
-	public Double getStdDeviation() {
+	public Double getStdDeviationX() {
+		
+		if (stdDeviation == null) {
+		  stdDeviation = computeStdDeviation();
+		}
+		
+		return stdDeviation;
+	}
+	
+	public Double getStdDeviationY() {
+		
+		if (stdDeviation == null) {
+		  stdDeviation = computeStdDeviation();
+		}
+		
+		return stdDeviation;
+	}
+	
+	public Double getStdDeviationZ() {
 		
 		if (stdDeviation == null) {
 		  stdDeviation = computeStdDeviation();
