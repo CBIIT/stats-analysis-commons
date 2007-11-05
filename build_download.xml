@@ -2,7 +2,7 @@
 	<property file="basic_build.properties" />
 	<target name="build_codebase">
 	     <echo>Building the caintegrator-analysis-commons.jar...</echo>
-	    <ant target="build_jar" dir="."/>
+	    <ant target="build_dependency" dir="."/>
 	</target>
 	<target name="build_zip" depends="build_codebase">
 		 <delete file="${module_name}.zip"/>
