@@ -65,8 +65,8 @@ import java.io.Serializable;
 * 
 */
 
-public enum TissueType implements Serializable{
-	/** Lists all the possible Tissue Types used 
+public enum SpecimenType implements Serializable{
+	/** Lists all the possible Specimen Types used 
 	 * 
 	 */
 	NONE { 
@@ -79,9 +79,9 @@ public enum TissueType implements Serializable{
 		{ 
 			return "Blood";
 		} },
-	TISSUE {public String toString() 
+	TISSUE_BRAIN {public String toString() 
 		{ 
-			return "Tissue";
+			return "Tissue (Brain)";
 		} }
 
 };
