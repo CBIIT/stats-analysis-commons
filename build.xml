@@ -24,6 +24,7 @@
 		<echo>Build Failed! The jms.jar must be present in the lib dir to compile!</echo>
 	</target>
 	<target name="build_jar" if="jms.jar.present" depends="warning">
+		
 		<delete dir="${build.classes.dir}" failonerror="false" />
 		<mkdir dir="${build.classes.dir}" />
 		<javac srcdir="${build.source.dir}" destdir="${build.classes.dir}" source="1.5" excludes="**/test/**" debug="true" debuglevel="lines,vars,source">
@@ -39,22 +40,7 @@
 				<include name="*.jar" />
 			</fileset>
 		</jar>
-
-		<delete dir="${build.classes.dir}" failonerror="false" />
-		<mkdir dir="${build.classes.dir}" />
-		<javac srcdir="${build.source.dir}" destdir="${build.classes.dir}" source="1.5" excludes="**/test/**" debug="true" debuglevel="lines,vars,source">
-			<classpath>
-				<fileset dir="${build.lib.dir}">
-					<include name="*.jar" />
-				</fileset>
-			</classpath>
-		</javac>
-		<jar jarfile="caintegrator-analysis-commons.jar">
-			<fileset dir="${build.classes.dir}" />
-			<fileset dir="${build.lib.dir}">
-				<include name="*.jar" />
-			</fileset>
-		</jar>
+		
 	</target>
 	
 
