@@ -64,7 +64,7 @@ package gov.nih.nci.caintegrator.enumeration;
 */
 
 public enum FindingStatus {
-	Error, Running, Completed, Emailed, Loading;
+	Error, Running, Completed, Email, Retrieving;
 	
 	//Describe any error or execption message
 	String comment;
