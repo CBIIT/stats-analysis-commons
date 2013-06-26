@@ -1,0 +1,16 @@
+(no author) = no_author <no_author@no_author.cvs2svn>
+ashinohara =  Andrew Shinohara <Andrew.Shinohara@fda.hhs.gov>
+bauerd = bauerd <bauerd>
+cais = Shuang Cai <cais>
+chenhan = chenhan <chenhan>
+cvsuser = cvsuser <cvsuser>
+guruswas = Srinivasan Guruswami <srinivasan.guruswami@fda.hhs.gov>
+harrismic = Harris Michael <harrismic>
+landyr = Ryan Landy <landyr>
+lewisma2 = Mark Lewis <lewisma2>
+prakasht = Thaigarajan Prakash <thiagarajan.prakash@nih.gov>
+root = root <root>
+rossok = Kevin Rosso <Kevin.Rosso@fda.hhs.gov>
+sahnih = Himanso Sahni <Himanso.Sahni@fda.hhs.gov>
+svnuser = svnuser <svnuser>
+zhangd = Dana Zhang <zhangd>
